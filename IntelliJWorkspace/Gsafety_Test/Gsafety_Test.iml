@@ -20,7 +20,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://E:/JAR/mysql_connector_java_5.1.30-bin/mysql-connector-java-commercial-5.1.30-bin.jar!/" />
+          <root url="jar://F:/360Downloads/mysql-connector-java-commercial-5.1.30-bin.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

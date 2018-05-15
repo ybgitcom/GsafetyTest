@@ -12,7 +12,7 @@ public class CdDAO implements Idao{
 
     private Connection connection;
     private String serverIP = "//localhost:3306/test_java";
-    private String username = "admin";
+    private String username = "root";
     private String password = "root";
 
     //查询所有候选人

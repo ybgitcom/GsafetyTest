@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public class VtDAO implements Idao{
     private Connection connection;
     private String serverIP = "//localhost:3306/test_java";
-    private String username = "admin";
+    private String username = "root";
     private String password = "root";
 
     //登记投票者票选

@@ -160,7 +160,12 @@ public class Vote {
         BufferedReader br= new BufferedReader(new InputStreamReader(System.in));
         System.out.println("请输入您要投票的候选人ID：");
         try {
-            int n = Integer.parseInt(br.readLine());
+            String str = br.readLine();
+            while (!str.matches("[1-4]+")){
+                System.out.println("输入格式不正确！重新输入：");
+                str = br.readLine();
+            }
+            int n = Integer.parseInt(str);
             if (vtDAO.vote(voter,n)){
                 System.out.println("投票成功！");
                 showResult();
