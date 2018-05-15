@@ -35,12 +35,13 @@ public class VtDAO implements Idao{
             try {
                 while (resultSet.next()){
                     if (resultSet.getString("Vt_pwd").equals(voter.getVtPwd())){
-                        if (resultSet.getInt("Cd_id")!=0){
+                        int cd_id = resultSet.getInt("Cd_id");
+                        if (cd_id != 0){
                             System.out.println("你已经投票！");
-                            return 2;
+                            return cd_id;
                         }else {
                             System.out.println("可以开始投票！");
-                            return 1;
+                            return 5;
                         }
                     }
                 }

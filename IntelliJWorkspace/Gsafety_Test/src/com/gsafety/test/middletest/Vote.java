@@ -18,7 +18,7 @@ import java.util.Random;
 
 public class Vote {
 
-    private static final String CODES="0123456789QWERTYUIOPASDFGHJKLZXCVBNM";
+    private static final String CODES="0123456789QWERTYUIPASDFGHJKLZXCVBNM";
     private CdDAO cdDAO = new CdDAO();
     private VtDAO vtDAO = new VtDAO();
 
@@ -86,12 +86,12 @@ public class Vote {
             int flag = vtDAO.login(voter);
             if (flag==0){
                 System.out.println("用户名不存在或密码错误！");
-            }else if(flag==1){
+            }else if(flag==5){
                 //可以开始投票
                 voting(voter);
             }else {
                 //显示票选结果
-                System.out.println("你已投票，投票结果为：");
+                System.out.println("你已投票给"+flag+"号，票选结果为：");
                 showResult();
             }
         } catch (IOException e) {
@@ -111,9 +111,14 @@ public class Vote {
             String pwd = br.readLine();
             System.out.println("请再次输入密码：");
             String pwd2 = br.readLine();
-            if (!pwd.equals(pwd2)){
+            while (!pwd.equals(pwd2)){
                 System.out.println("两次输入密码不一致！重新注册！");
-                reg();
+                System.out.println("请输入用户名：");
+                username = br.readLine();
+                System.out.println("请输入密码：");
+                pwd = br.readLine();
+                System.out.println("请再次输入密码：");
+                pwd2 = br.readLine();
             }
             Voter voter = new Voter(username,pwd,0);
             int flag = vtDAO.reg(voter);
@@ -121,7 +126,7 @@ public class Vote {
                 System.out.println("注册失败！");
             }else if(flag==1){
                 System.out.println("注册成功！");
-            }else {
+            }else if(flag==2){
                 System.out.println("该用户名已被注册！请重新输入！");
                 reg();
             }
