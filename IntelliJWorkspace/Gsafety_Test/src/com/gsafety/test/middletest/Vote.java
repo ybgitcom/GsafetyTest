@@ -68,8 +68,16 @@ public class Vote {
         try {
             System.out.println("请输入用户名：");
             String username = br.readLine();
+            while (username.equals("")){
+                System.out.println("用户名不能为空！");
+                username = br.readLine();
+            }
             System.out.println("请输入密码：");
             String pwd = br.readLine();
+            while (pwd.equals("")){
+                System.out.println("密码不能为空！");
+                pwd = br.readLine();
+            }
             Voter voter = new Voter(username,pwd);
             Random random = new Random();
             char[] codes = new char[4];
@@ -107,8 +115,16 @@ public class Vote {
         try {
             System.out.println("请输入用户名：");
             String username = br.readLine();
+            while (username.equals("")){
+                System.out.println("用户名不能为空！");
+                username = br.readLine();
+            }
             System.out.println("请输入密码：");
             String pwd = br.readLine();
+            while (pwd.equals("")){
+                System.out.println("密码不能为空！");
+                pwd = br.readLine();
+            }
             System.out.println("请再次输入密码：");
             String pwd2 = br.readLine();
             while (!pwd.equals(pwd2)){
