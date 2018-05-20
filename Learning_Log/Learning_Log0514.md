@@ -121,7 +121,6 @@
      * @return 查询结果
      */
     public static boolean update(Connection connection, String sql,Object... params){
-
         try{
             PreparedStatement ps = connection.prepareStatement(sql);
             for(int i = 0;i < params.length;i++){
