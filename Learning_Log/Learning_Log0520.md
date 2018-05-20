@@ -59,3 +59,10 @@
 
 * bootstrap3注意事项
   * 在导入bootstrap到html文件时，增加属性`integrity`和`crossorigin`，前者是验证文件完整性的sha加密码，后者则是引入跨域脚本的选项
+  * 默认并没有导入bootstrap的Jquery包，需要添加手动导入
+
+  ```html
+  <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  ```
